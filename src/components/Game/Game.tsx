@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { allEqual, getIndicesArr } from '../../common/utils';
 import { SquareType, Board } from '../Board';
 import { AuthorDetails } from './Author';
+import { MoveHistory } from './type';
 
 /**
  * A helper function that calculate the winner by looping through the board (brute-force)
@@ -34,9 +35,6 @@ const calculateWinner = (board: SquareType[], boardWitdth: number, numToWin: num
   }
   return null;
 };
-
-// Move type
-type MoveHistory = { row: number; col: number } | null;
 
 export const Game = () => {
   const [moveHistory, setMoveHistory] = useState<MoveHistory[]>([null]);
